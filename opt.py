@@ -1,5 +1,6 @@
 import argparse
 
+
 def get_opts():
     parser = argparse.ArgumentParser()
 
@@ -24,10 +25,10 @@ def get_opts():
                         help='factor to perturb depth sampling points')
     parser.add_argument('--noise_std', type=float, default=1.0,
                         help='std dev of noise added to regularize sigma')
-        
+
     parser.add_argument('--batch_size', type=int, default=1024,
                         help='batch size')
-    parser.add_argument('--chunk', type=int, default=32*1024,
+    parser.add_argument('--chunk', type=int, default=32 * 1024,
                         help='chunk size to split the input to avoid OOM')
     parser.add_argument('--num_epochs', type=int, default=16,
                         help='number of training epochs')

@@ -1,5 +1,6 @@
 from torch import nn
 
+
 class ColorLoss(nn.Module):
     def __init__(self, coef=1):
         super().__init__()
@@ -12,6 +13,10 @@ class ColorLoss(nn.Module):
             loss += self.loss(inputs['rgb_fine'], targets)
 
         return self.coef * loss
-               
+
 
 loss_dict = {'color': ColorLoss}
+
+if __name__ == '__main__':
+    # testing
+    loss = ColorLoss(coef=1)
